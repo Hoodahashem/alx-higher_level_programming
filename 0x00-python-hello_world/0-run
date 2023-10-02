@@ -1,2 +1,2 @@
-#!/usr/bin/
+#!/bin/bash
 pyhton3 $PYFILE
