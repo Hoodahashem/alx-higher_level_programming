@@ -2,4 +2,4 @@
 print("Holberton School")
 print("Holberton School")
 print("Holberton School")
-print("Holberton ")
+print("Holberton")
