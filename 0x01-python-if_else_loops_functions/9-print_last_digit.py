@@ -2,13 +2,13 @@
 
 def print_last_digit(number):
     if number < 0:
-        number % -10
-        print("{}".format(number))
+        var = number % -10
+        print("{}".format(number), end="")
         return number
     elif number > 0:
-        number % 10
-        print("{}".format(number))
+        var = number % 10
+        print("{}".format(number), end="")
         return number
     else:
-        print("{}".format(number))
+        print("{}".format(number), end="")
         return number
