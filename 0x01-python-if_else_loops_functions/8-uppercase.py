@@ -9,5 +9,5 @@ def uppercase(str):
         else:
             return chr(var + 31)
     for lol in str:
-        print("{}".format(uppercaselol(lol)), end="")
+        print("{}".format(chr(uppercaselol(lol))), end="")
     print("{}".format(newline), end="")
