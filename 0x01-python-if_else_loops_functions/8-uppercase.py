@@ -2,12 +2,11 @@
 def uppercase(str):
     newline = '\n'
 
-    def uppercaselol(chrs):
-        var = ord(chrs)
-        if var in range(65, 91):
-            return chrs
+    for char in str:
+        var = ord(char)
+        if var in range(97, 123):
+            char = chr(var - 32)
         else:
-            return chr(var + 31)
-    for lol in str:
-        print("{}".format(chr(uppercaselol(lol))), end="")
+            char = char
+        print("{}".format(char), end="")
     print("{}".format(newline), end="")
