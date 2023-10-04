@@ -21,7 +21,7 @@
 # End Function
 def fizzbuzz():
     fiz = "Fizz"
-    buz = "Buz"
+    buz = "Buzz"
     fizbuz = "FizzBuzz"
     space = " "
     for i in range(1, 101):
