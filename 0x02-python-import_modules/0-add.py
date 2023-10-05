@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from add_0 import add
-first = 1
-second = 2
-result = add(first, second)
+a = 1
+b = 2
+result = add(a, b)
 
-print("{} + {} = {}".format(first, second, result))
+print("{} + {} = {}".format(a, b, result))
