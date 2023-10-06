@@ -1,11 +1,8 @@
 #!/usr/bin/python3
+
+import hidden_4
+
 if __name__ == "__main__":
-    import hidden_4
-    gus = dir(hidden_4)
-    for i in range(len(gus)):
-        for j in range(len(gus[i])):
-            if (gus[i][j] == '_' and gus[i][j+1] == '_'):
-                break
-            else:
-                print(gus[i])
-                break
+    for content in dir(hidden_4):
+        if content[:2] != "__":
+            print("{:s}".format(content))
