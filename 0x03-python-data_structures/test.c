@@ -24,6 +24,17 @@ void insert_at_the_end(struction **node, int value)
     }
     curr->next = new_node;
 }
+void dallocate(struction **node)
+{
+    struction *curr = *node;
+    while (curr!=NULL)
+    {
+        struction *sl = curr;
+        curr = curr->next;
+        free(sl);
+    }
+    *node = NULL;
+}
 int main(void)
 {
     struction *node = NULL;
@@ -32,7 +43,9 @@ int main(void)
     insert_at_the_end(&node, 5);
     insert_at_the_end(&node, 8);
 
-    for(struction *curr = node; curr != NULL; curr = curr->next) {
+    for(struction *curr = node; curr != NULL; curr = curr->next)
+    {
         printf("then num in the node is: %d\n", curr->x);
     }
+    dallocate(&node);
 }
