@@ -14,6 +14,12 @@ void insert_at_the_end(NODE **node, int value)
     new_node->x = value;
     new_node->next = NULL;
 
+    if (*node == NULL)
+    {
+        *node = new_node;
+        return;
+    }
+
     NODE *curr = *node;
     while(curr->next != NULL)
     {
@@ -23,10 +29,11 @@ void insert_at_the_end(NODE **node, int value)
 }
 int main(void)
 {
-    NODE *node = malloc(sizeof(struct sturction));
+    NODE *node = NULL;
+    // NODE *node = malloc(sizeof(struct sturction));
 
-    node->x = 0;
-    node->next = NULL;
+    // node->x = 0;
+    // node->next = NULL;
     insert_at_the_end(&node, 5);
     insert_at_the_end(&node, 8);
     insert_at_the_end(&node, 4);
