@@ -1,27 +1,24 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-typedef struct sturction
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct struction
 {
     int x;
-    struct sturction *next;
-}NODE;
+    struct struction *next;
+}struction;
 
-void insert_at_the_end(NODE **node, int value)
+void insert_at_the_end(struction **node, int value)
 {
-    NODE *new_node = malloc(sizeof(struct sturction));
-
+    struction *new_node = malloc(sizeof(struction));
     new_node->x = value;
     new_node->next = NULL;
-
     if (*node == NULL)
     {
         *node = new_node;
         return;
     }
 
-    NODE *curr = *node;
-    while(curr->next != NULL)
+    struction *curr = *node;
+    while(curr->next)
     {
         curr = curr->next;
     }
@@ -29,16 +26,13 @@ void insert_at_the_end(NODE **node, int value)
 }
 int main(void)
 {
-    NODE *node = NULL;
-    // NODE *node = malloc(sizeof(struct sturction));
+    struction *node = NULL;
 
-    // node->x = 0;
-    // node->next = NULL;
+    insert_at_the_end(&node, 3);
     insert_at_the_end(&node, 5);
     insert_at_the_end(&node, 8);
-    insert_at_the_end(&node, 4);
-    for(NODE *curr = node; curr; curr = curr->next)
-    {
-        printf("int: %d\n", curr->x);
-    } 
+
+    for(struction *curr = node; curr != NULL; curr = curr->next) {
+        printf("then num in the node is: %d\n", curr->x);
+    }
 }
