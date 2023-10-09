@@ -1,45 +1,67 @@
 #include "lists.h"
+
 /**
- * is_palindrome - function
- * @head: the head of the list
- * Return: true if the head of the list is a palindrome
-*/
+ * reverse_listint - gustavo
+ * @head: gustavo
+ *
+ * Return: gustavo
+ */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+
+	while (current)
+	{
+		listint_t *next = current->next;
+
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	*head = prev;
+}
+
+/**
+ * is_palindrome - gustavo
+ * @head: gustavo
+ *
+ * Return: gustavo
+ */
 int is_palindrome(listint_t **head)
 {
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
+
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	listint_t *slow = *head, *fast = *head;
-
-	while (fast != NULL && fast->next != NULL)
+	while (1)
 	{
-		slow = slow->next;
 		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
-	listint_t *prev = NULL, *curr = slow, *next;
-
-	while (curr != NULL)
+	reverse_listint(&dup);
+	while (dup && temp)
 	{
-		next = curr->next;
-		curr->next = prev;
-		prev = curr;
-		curr = next;
-	}
-	listint_t *fhalf = *head, *shalf = prev;
-
-	while (shalf != NULL)
-	{
-		if (fhalf->n != shalf->n)
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
 			return (0);
-		fhalf = fhalf->next;
-		shalf = shalf->next;
 	}
-	curr = prev, prev = NULL;
-	while (curr != NULL)
-	{
-		next = curr->next;
-		curr->next = prev;
-		prev = curr;
-		curr = next;
-	}
-	return (1);
+	if (!dup)
+		return (1);
+	return (0);
 }
