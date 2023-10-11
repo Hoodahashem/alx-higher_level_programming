@@ -1,11 +1,9 @@
-#!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    newmatrix = []
-
-    for col in matrix:
-        list = []
-        for row in col:
-            row ** 2
-            list.append(row)
-        newmatrix.append(list)
-    return newmatrix
+    newlist = []
+    for row in matrix:
+        something = []
+        for elem in row:
+            elem = elem * elem
+            something.append(elem)
+        newlist.append(something)
+    return newlist
