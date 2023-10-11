@@ -1,1 +1,1 @@
-# python data structiores
+# python data structures
