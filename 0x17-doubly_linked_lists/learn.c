@@ -24,7 +24,6 @@ void dalloc(node **tail, node **head)
     tail = NULL;
     head = NULL;
 }
-
 void add_at_the_beginning(node **tail, int value)
 {
     node *newnode = malloc(sizeof(node));
@@ -40,24 +39,52 @@ void add_at_the_beginning(node **tail, int value)
 }
 void add_at_the_end(node **head, int value)
 {
+    node *newnode = malloc(sizeof(node));
+    newnode->x = value;
+    newnode->next = NULL;
+    newnode->prev = *head;
 
+    if (*head != NULL)
+    {
+        (*head)->next = newnode;
+    }
+    *head = newnode;
 }
+void init(node **head, node **tail, int value)
+{
+    node *newnode = malloc(sizeof(node));
+    newnode->next = NULL;
+    newnode->prev = NULL;
+    newnode->x = value;
 
+    *tail = newnode;
+    *head = newnode;
+}
+void add_after(node *btngan, int value)
+{
+    node *newnode = malloc(sizeof(node));
+    newnode->x = value;
+    newnode->next = btngan->next;
+    newnode->prev = btngan;
+    if (btngan->next != NULL)
+    {
+        btngan->next->prev = newnode;
+    }
+    btngan->next = newnode;
+}
 int main(void)
 {
     node *tail = NULL;
     node *head = NULL;
 
-    add_at_the_beginning(&tail, 9);
-    add_at_the_beginning(&tail, 8);
-    add_at_the_beginning(&tail, 7);
-    add_at_the_beginning(&tail, 6);
-    add_at_the_beginning(&tail, 5);
-    node *curr = head;
+    init(&head, &tail, 3);
+    add_at_the_end(&head, 5);
+    add_after(head->prev, 4);
+    node *curr = tail;
     while (curr != NULL)
     {
         printf("the number is: %d\n", curr->x);
-        curr = curr->prev;
+        curr = curr->next;
     }
     dalloc(&tail, &head);
 }
