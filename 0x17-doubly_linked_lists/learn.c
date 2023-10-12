@@ -38,20 +38,21 @@ void add_at_the_beginning(node **tail, int value)
     }
     *tail = newnode;
 }
+void add_at_the_end(node **head, int value)
+{
+
+}
 
 int main(void)
 {
-    node *tail = malloc(sizeof(struct node));
-    tail->x = 1;
-    tail->prev = NULL;
-    tail->next = malloc(sizeof(struct node));
-    tail->next->x = 2;
-    tail->next->prev = tail;
-    tail->next->next = malloc(sizeof(struct node));
-    tail->next->next->x = 3;
-    tail->next->next->next = NULL;
-    tail->next->next->prev = tail->next;
-    node *head = tail->next->next;
+    node *tail = NULL;
+    node *head = NULL;
+
+    add_at_the_beginning(&tail, 9);
+    add_at_the_beginning(&tail, 8);
+    add_at_the_beginning(&tail, 7);
+    add_at_the_beginning(&tail, 6);
+    add_at_the_beginning(&tail, 5);
     node *curr = head;
     while (curr != NULL)
     {
