@@ -1,24 +1,25 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    noe = 0
-    ll = 0
+    num_of_elem = 0
+    len_list = 0
+    counter = 0
     for item in my_list:
-        ll += 1
+        len_list += 1
     try:
         if (x == 0):
-            return noe
-        if (x >= ll):
+            return num_of_elem
+        if (x >= len_list):
             for elem in my_list:
                 print("{}".format(elem), end="")
             print()
-            return ll
+            return len_list
         else:
             for elem in my_list:
-                noe += 1
+                num_of_elem += 1
                 print("{}".format(elem), end="")
-                if (noe == x):
+                if (num_of_elem == x):
                     break
             print()
-            return noe
+            return num_of_elem
     except BaseException:
         pass
