@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""
-there is no fuckin mudules!
-"""
+#!/usr/bin/python3
+
+""" def class Square."""
+
+
 class Square:
-    """
-    there is an empty fucking class!
-    """
+    """ this is class square."""
     pass
