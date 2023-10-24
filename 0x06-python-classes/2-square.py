@@ -9,7 +9,6 @@ class Square:
         """ fucking square class
             size (int): gustavo
         """
-        self.__size = size
         try:
             if type(size) != int:
                 raise TypeError
@@ -19,3 +18,4 @@ class Square:
             print("size must be an integer")
         except ValueError:
             print("size must be >= 0")
+        self.__size = size
