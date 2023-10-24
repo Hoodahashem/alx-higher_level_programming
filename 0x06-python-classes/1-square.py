@@ -7,8 +7,6 @@ class Square:
     """ this is class square."""
     def __init__(self, size):
         """ fucking square class
-
-        Args:
             size (int): gustavo
         """
-        self.size = size
+        self.__size = size
