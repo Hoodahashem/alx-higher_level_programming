@@ -1,4 +1,4 @@
-YOUR PROGRAM SHOULD OBERATE THIS TEST CASES!
+YOUR PROGRAM SHOULD OPERATE THIS TEST CASES!
 
     >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(2, 3)
