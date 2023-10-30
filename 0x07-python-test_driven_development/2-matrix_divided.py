@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """don't give a shit about anything anybody focus on yourself!"""
+
+
 def matrix_divided(matrix, div):
     """
     Divide all elements of a matrix.

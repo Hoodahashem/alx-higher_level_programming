@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """don't give a shit about anything anybody focus on yourself!"""
+
+
 def add_integer(a, b=98):
     """
     Return the integer addition of a and b.

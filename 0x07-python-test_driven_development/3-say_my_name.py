@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """don't give a shit about anything anybody focus on yourself!"""
+
+
 def say_my_name(first_name, last_name=""):
     """
     Prints a greeting to the user.
