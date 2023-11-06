@@ -8,6 +8,7 @@ class BaseGeometry:
     def area(self):
         """docstring for area"""
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """docstring for integer_validator"""
         if type(value) != int:
