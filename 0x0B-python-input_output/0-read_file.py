@@ -6,4 +6,6 @@
 def read_file(filename=""):
     """Read a file"""
     with open(filename, "r") as f:
-        return f.read()
+        returns = f.read()
+        f.close()
+    return returns
