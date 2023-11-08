@@ -16,5 +16,6 @@ class Student:
         else:
             dict = {}
             for item in attrs:
-                dict.update({item: getattr(item)})
+                if hasattr(self, item):
+                    dict.update({item: getattr(self, item)})
             return dict
