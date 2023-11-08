@@ -14,7 +14,7 @@ class Student:
         if attrs == None:
             return self.__dict__
         else:
-            list = []
-            for k, v in attrs.items():
-                list.append({k: v})
-                return list
+            dict = {}
+            for item in attrs:
+                dict.update({item: getattr(item)})
+            return dict
