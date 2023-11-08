@@ -1,28 +1,21 @@
 #!/usr/bin/python3
-"""let's get this sh*t Done"""
+"""Defines a Pascal's Triangle function."""
 
 
 def pascal_triangle(n):
-    """i really hope to solve this problem i have a timer in an hour!!"""
-    listoflist = [[1], [1,1], [1,1,1], [1,1,1,1], [1,1,1,1,1]]
-    i = 0
-    x = 0
+    """Represent Pascal's Triangle of size n.
+
+    Returns a list of lists of integers representing the triangle.
+    """
     if n <= 0:
-        return listoflist
-    else:
-        while i < n:
-            while x <= i:
-                if x == 0:
-                    listoflist[i][x] = 1
-                elif i == x == 1:
-                    listoflist[i][x] = 1
-                elif i == x:
-                    listoflist[i][x] = 1
-                else:
-                    listoflist[i][x] = listoflist[i - 1][x-1] + listoflist[i - 1][x]
-                x += 1
-            i += 1
-            if i != n:
-                listoflist[i][x] = 1
-            x = 0
-        return listoflist
+        return []
+
+    listoflist = [[1]]
+    while len(listoflist) != n:
+        tri = listoflist[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        listoflist.append(tmp)
+    return listoflist
