@@ -9,13 +9,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-def to_json(self, attrs=None):
-    """Convert a Python object to a JSON string"""
-    if attrs is None:
-        return self.__dict__
-    else:
-        my_dict = {}
-        for attr in attrs:
-            if hasattr(self, attr):
-                my_dict[attr] = getattr(self, attr)
-        return my_dict
+    def to_json(self, attrs=None):
+        """Converts attributes to json representation"""
+        if attrs == None:
+            return self.__dict__
+        else:
+            list = []
+            for k, v in attrs.items():
+                list.append({k: v})
+                return list
