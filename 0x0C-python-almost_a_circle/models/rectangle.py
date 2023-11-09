@@ -19,30 +19,36 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Returns the x coordinate"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Set the value"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         self.__x = value
 
     @property
     def y(self):
+        """Returns the y coordinate"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Set the value"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         self.__y = value
 
     @property
     def width(self):
+        """Width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Set the width of the object"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -51,12 +57,30 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set the height of the object"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
+
+    def area(self):
+        """Returns the area"""
+        return self.width * self.height
+
+    def display(self):
+        """Display the object"""
+        for i in range(self.height):
+            for j in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """Return a string representation of the object"""
+        return "[{}] ({}) {}/{} - {}/{}".format((self.__class__.__name__), self.id, self.x, self.y, self.width, self.height)
+        # return [Rectangle] (<id>) <x>/<y> - <width>/<height>
