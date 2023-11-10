@@ -50,3 +50,21 @@ class Base:
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns a new instance of the given JSON string"""
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create function"""
+        if dictionary or dictionary != {}:
+            if cls.__name__ == 'Rectangle':
+                n = cls(1,1)
+            else:
+                n = cls(1)
+            n.update(**dictionary)
+            return n
