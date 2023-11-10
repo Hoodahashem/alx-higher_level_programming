@@ -22,7 +22,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Update the object"""
-        if args and len(args)!= 0:
+        if args and len(args) != 0:
             x = 0
             for arg in args:
                 if x == 0:
@@ -39,11 +39,11 @@ class Square(Rectangle):
                 x += 1
         elif kwargs and len(kwargs) != 0:
             if 'id' in kwargs:
-                if kwargs["id"] == None:
+                if kwargs["id"] is None:
                     self.__init__(self.size, self.x, self.y)
                 else:
                     self.id = kwargs["id"]
-            if'size' in kwargs:
+            if 'size' in kwargs:
                 self.size = kwargs['size']
             if 'x' in kwargs:
                 self.x = kwargs['x']
@@ -58,3 +58,8 @@ class Square(Rectangle):
             "x": self.x,
             "y": self.y
         }
+
+    def __str__(self):
+        """Return the print() and str() representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)

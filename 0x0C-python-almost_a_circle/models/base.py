@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import json
 """i'm just working on myself and hoping from GOD that gives me
 what i'm looking for."""
 
@@ -15,3 +15,10 @@ class Base:
             self.id = self.__nb_objects
         else:
             self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Convert a list of dictionaries to a JSON string"""
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
