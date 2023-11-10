@@ -6,18 +6,22 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Square"""
     def __init__(self, size, x=0, y=0, id=None):
+        """Initialize a new instance of the class"""
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
+        """The size of the object"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """Set the size"""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Update the object"""
         if args and len(args)!= 0:
             x = 0
             for arg in args:
