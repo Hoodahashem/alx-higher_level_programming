@@ -39,10 +39,10 @@ class Square(Rectangle):
                 x += 1
         elif kwargs and len(kwargs) != 0:
             if 'id' in kwargs:
-                if kwargs[id] == None:
+                if kwargs["id"] == None:
                     self.__init__(self.size, self.x, self.y)
                 else:
-                    self.id = kwargs[id]
+                    self.id = kwargs["id"]
             if'size' in kwargs:
                 self.size = kwargs['size']
             if 'x' in kwargs:

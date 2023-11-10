@@ -86,7 +86,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return a string representation of the object"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+        return "[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__,
             self.id,
             self.x,
             self.y,
