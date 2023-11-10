@@ -41,7 +41,6 @@ class Base:
         """from_json_string function"""
         if json_string is None or json_string == "[]":
             return []
-        
         else:
             return json.loads(json_string)
 
@@ -63,7 +62,7 @@ class Base:
         """create function"""
         if dictionary or dictionary != {}:
             if cls.__name__ == 'Rectangle':
-                n = cls(1,1)
+                n = cls(1, 1)
             else:
                 n = cls(1)
             n.update(**dictionary)
