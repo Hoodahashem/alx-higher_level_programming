@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-# rectangle.py
+# square.py
+"""some documentation"""
 from models.rectangle import Rectangle
+
+"""some documentation"""
 
 
 class Square(Rectangle):

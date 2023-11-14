@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# base.py
+"""Defines a base model class."""
 import json
 """i'm just working on myself and hoping from GOD that gives me
 what i'm looking for."""
@@ -46,6 +48,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """some documentation"""
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)

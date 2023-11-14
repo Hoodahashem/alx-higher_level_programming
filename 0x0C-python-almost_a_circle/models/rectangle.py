@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # rectangle.py
+"""some documentation"""
 from models.base import Base
 
 
