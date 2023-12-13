@@ -1,3 +1,3 @@
 -- create user
-CREATE USER `user_0d_1`@`localhost` IF NOT EXISTS 
+CREATE USER IF NOT EXISTS `user_0d_1`@`localhost`
 IDENTIFIED BY `user_0d_1_pwd`;
