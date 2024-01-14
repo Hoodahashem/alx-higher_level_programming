@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     curser = db.curser()
 
-    curser.execute("SELECT * FROM states")
+    curser.execute("SELECT * FROM `states`")
 
     states = curser.fetchall()
 
