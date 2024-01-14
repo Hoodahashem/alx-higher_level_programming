@@ -26,7 +26,7 @@ if __name__ == "__main__":
     while x < len(lst):
         print(lst[x], end='')
         if x != len(lst) - 1:
-            print(", ",end="")
+            print(", ", end="")
         x += 1
     print()
     cur.close()
