@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" 
+"""
 importing the needed modules
 """
 
