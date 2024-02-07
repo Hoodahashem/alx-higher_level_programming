@@ -13,5 +13,9 @@ if (isNaN(process.argv[2]))
     {
       process.stdout.write('X');
     }
+    if (i < x-1)
+    {
+      process.stdout.write('\n');
+    }
   }
 }
