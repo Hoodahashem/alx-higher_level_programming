@@ -1,24 +1,23 @@
 #!/usr/bin/node
 
-if (isNaN(process.argv[2]) || process.argv.length === 1)
+if (isNaN(process.argv[2]) || process.argv.length <= 3)
 {
   console.log(0);
 } else {
   let biggest = 0;
-  for (let i = 2; i < process.argv.length - 1; i++)
+  for (let i = 2; i < process.argv.length; i++)
   {
-    if (process.argv[i] >= biggest)
+    if (biggest < process.argv[i])
     {
-      biggest = process.argv[i];
+      biggest = process.argv[i]
     }
   }
-  let lst = splice(indexof(biggest),1)
-  sec = 0;
-  for (let x = 0; x < lst.length - 1; x++)
-  {
-    if (lst[x] > sec)
+  let secondbiggest = 0
+  for (let x = 0; x < process.argv.length; x++) {
+    if (process.argv[x] !== biggest && secondbiggest < process.argv[x])
     {
-      sec = lst[x];
+      secondbiggest = process.argv[x]
     }
   }
+  console.log(secondbiggest)
 }
