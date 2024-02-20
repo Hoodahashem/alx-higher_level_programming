@@ -25,11 +25,8 @@ module.exports = class Rectangle {
   }
 
   rotate () {
-    for (let i = 0; i < this.width; i++) {
-      for (let x = 0; x < this.height; x++) {
-        process.stdout.write('X');
-      }
-      process.stdout.write('\n');
-    }
+    let something = this.height
+    this.height = this.width
+    this.width = something
   }
 };
