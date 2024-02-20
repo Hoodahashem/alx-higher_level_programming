@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const character = 'Wedge Antilles';
-const url = process.argv[2];
-const req = require('request');
+const request = require('request');
+const args = process.argv;
+const requestURL = args[2];
 
-req(url, (err, res, body) => {
+request.get(requestURL, (err, res, body) => {
   if (err) {
     console.log(err);
   } else {
@@ -16,6 +16,7 @@ req(url, (err, res, body) => {
         if (results[i].characters[j].includes('18')) { count += 1; }
       }
     }
+
     console.log(count);
   }
 });
